@@ -45,11 +45,11 @@ texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 1536, 1024 )
 
 [sub_resource type="DynamicFont" id=10]
-size = 50
+size = 39
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=11]
-size = 50
+size = 39
 outline_color = Color( 0.137255, 0.258824, 0.882353, 1 )
 font_data = ExtResource( 3 )
 
@@ -169,16 +169,15 @@ margin_right = 520.0
 margin_bottom = 29.0
 
 [node name="HaveAccountLabel" type="Label" parent="BottomText"]
-margin_top = 80.0
-margin_right = 520.0
-margin_bottom = 125.0
+margin_top = 63.0
+margin_right = 410.0
+margin_bottom = 117.0
 custom_fonts/font = SubResource( 10 )
 text = "¿Ya tiene una cuenta?"
 
 [node name="LoginButton" type="Button" parent="BottomText"]
-margin_left = 524.0
-margin_top = 75.0
-margin_right = 842.0
+margin_left = 414.0
+margin_right = 665.0
 margin_bottom = 181.0
 custom_colors/font_color = Color( 0.27451, 0.431373, 0.968627, 1 )
 custom_fonts/font = SubResource( 11 )
