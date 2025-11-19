@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/background/background cyan.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Visual/logo.png" type="Texture" id=2]
+[ext_resource path="res://Assets/fonts/nunito/Nunito-ExtraBold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Visual/botones/large.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Visual/botones/profile.png" type="Texture" id=5]
+[ext_resource path="res://Scrips/UI/ZoomButton.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/fonts/MPLUSRounded/MPLUSRounded1c-Black.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1536, 1024 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="CenterRoot" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 6.0
+margin_right = 3.0
+
+[node name="MainVBox" type="VBoxContainer" parent="CenterRoot"]
+margin_left = 391.0
+margin_top = 10.0
+margin_right = 891.0
+margin_bottom = 703.0
+custom_constants/separation = -20
+alignment = 1
+
+[node name="logo" type="TextureRect" parent="CenterRoot/MainVBox"]
+margin_right = 500.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 460, 360 )
+rect_clip_content = true
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="TitleLabel" type="Label" parent="CenterRoot/MainVBox"]
+margin_top = 340.0
+margin_right = 500.0
+margin_bottom = 513.0
+custom_fonts/font = SubResource( 2 )
+text = "Academia Cyan
+"
+align = 1
+valign = 1
+
+[node name="StartButton" type="Button" parent="CenterRoot/MainVBox"]
+margin_top = 493.0
+margin_right = 500.0
+margin_bottom = 693.0
+rect_min_size = Vector2( 500, 200 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
+text = "Iniciar"
+script = ExtResource( 6 )
+
+[node name="ProfileButton" type="TextureButton" parent="."]
+margin_left = 770.0
+margin_top = -276.0
+margin_right = 1282.0
+margin_bottom = 236.0
+rect_min_size = Vector2( 96, 96 )
+rect_scale = Vector2( 0.25, 0.25 )
+rect_pivot_offset = Vector2( 500, 400 )
+texture_normal = ExtResource( 5 )
+script = ExtResource( 6 )
