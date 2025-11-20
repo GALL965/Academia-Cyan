@@ -1,0 +1,25 @@
+{
+  "conversation": [
+    {
+      "text": "¡Oh! tú debes ser el nuevo alumno!",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea1.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Es un placer tenerte aqui, en la academia Cyan aprenderas no solo aprenderas a controlar magia",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea3.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Tambien conoceras los secretos del mundo y la cienca... a nuestro modo",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea2.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Ven! vamos a darte una pequeña introduccion",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea4.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    }
+  ]
+}
+

@@ -1,0 +1,158 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Escenas/games/math/pizz.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Visual/fondos/pizz.png" type="Texture" id=2]
+[ext_resource path="res://assets/Sour_Gummy/static/SourGummy-Black.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Visual/botones/atras.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Visual/botones/play.png" type="Texture" id=5]
+[ext_resource path="res://Assets/ost/Rafflesia-Channel.mp3" type="AudioStream" id=12]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=15]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+region_rect = Rect2( 0, 0, 500, 250 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+region_rect = Rect2( 0, 0, 500, 250 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+region_rect = Rect2( 0, 0, 500, 250 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+region_rect = Rect2( 0, 0, 500, 250 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+region_rect = Rect2( 0, 0, 500, 250 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+region_rect = Rect2( 0, 0, 500, 250 )
+
+[node name="pizz" type="Control"]
+rect_scale = Vector2( 1, 1.00453 )
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 427.0
+margin_top = 72.0
+margin_right = 727.0
+margin_bottom = 72.0
+rect_scale = Vector2( 0.643816, 0.702767 )
+
+[node name="Salon" type="Sprite" parent="TextureRect"]
+position = Vector2( 400, 442 )
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.181
+anchor_top = 0.104
+anchor_right = 0.504
+anchor_bottom = 0.168
+margin_left = 400.0
+margin_top = 200.0
+margin_right = 700.0
+margin_bottom = 475.0
+rect_scale = Vector2( 1, 0.670906 )
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+alignment = 1
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="1" type="Button" parent="."]
+margin_left = 244.0
+margin_top = 553.493
+margin_right = 766.0
+margin_bottom = 1065.49
+rect_scale = Vector2( 0.4, 0.4 )
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 15 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 5 )
+text = "Opciones"
+icon = ExtResource( 5 )
+
+[node name="2" type="Button" parent="."]
+margin_left = 568.0
+margin_top = 552.497
+margin_right = 1090.0
+margin_bottom = 1064.5
+rect_scale = Vector2( 0.4, 0.405 )
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 15 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 5 )
+text = "Opciones"
+icon = ExtResource( 5 )
+
+[node name="3" type="Button" parent="."]
+margin_left = 897.0
+margin_top = 551.502
+margin_right = 1419.0
+margin_bottom = 1063.5
+rect_scale = Vector2( 0.4, 0.402 )
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 15 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 5 )
+text = "Opciones"
+icon = ExtResource( 5 )
+
+[node name="volver" type="Button" parent="."]
+margin_left = 33.0
+margin_top = 26.8782
+margin_right = 552.0
+margin_bottom = 538.878
+rect_min_size = Vector2( 180, 120 )
+rect_scale = Vector2( 0.4, 0.382 )
+custom_fonts/font = SubResource( 16 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+text = "salir"
+icon = ExtResource( 4 )
+
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 574.0
+margin_top = 438.016
+margin_right = 825.0
+margin_bottom = 487.016
+rect_pivot_offset = Vector2( -888, -21.9008 )
+custom_colors/font_color = Color( 0.0431373, 0.0117647, 1, 1 )
+text = "Cartametrica"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 902.0
+margin_top = 441.998
+margin_right = 1153.0
+margin_bottom = 490.998
+rect_pivot_offset = Vector2( -888, -21.9008 )
+custom_colors/font_color = Color( 0.0431373, 0.0117647, 1, 1 )
+text = "Aricombate"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 242.0
+margin_top = 436.025
+margin_right = 493.0
+margin_bottom = 485.025
+custom_colors/font_color = Color( 0.0431373, 0.0117647, 1, 1 )
+text = "Punto de fusion"
+
+[connection signal="pressed" from="1" to="." method="_on_1_pressed"]
+[connection signal="pressed" from="2" to="." method="_on_Opciones_pressed"]
+[connection signal="pressed" from="3" to="." method="_on_Opciones_pressed"]
+[connection signal="pressed" from="volver" to="." method="_on_volver_pressed"]

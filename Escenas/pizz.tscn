@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Visual/fondos/pizz.png" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 2160.0
+margin_bottom = 1080.0
+rect_scale = Vector2( 0.653964, 0.717906 )
+texture = ExtResource( 1 )

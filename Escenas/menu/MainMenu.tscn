@@ -1,0 +1,223 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Escenas/menu/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Visual/botones/large.png" type="Texture" id=2]
+[ext_resource path="res://assets/Sour_Gummy/static/SourGummy-Black.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Visual/fondos/salon.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Visual/botones/math.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Visual/botones/hist.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Visual/botones/geo.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Visual/botones/nat.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Visual/botones/esp.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Visual/botones/camp.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Visual/botones/salir.png" type="Texture" id=11]
+[ext_resource path="res://Assets/ost/Rafflesia-Channel.mp3" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Visual/botones/menu.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Visual/botones/pers.png" type="Texture" id=14]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=15]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+region_rect = Rect2( 0, 0, 500, 250 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+region_rect = Rect2( 0, 0, 500, 250 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+region_rect = Rect2( 0, 0, 500, 250 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 1536, 1024 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 1536, 1024 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 1536, 1024 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+region_rect = Rect2( 0, 0, 500, 250 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+region_rect = Rect2( 0, 0, 500, 250 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+region_rect = Rect2( 0, 0, 500, 250 )
+
+[node name="MainMenu" type="Control"]
+rect_scale = Vector2( 1, 1.00453 )
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 427.0
+margin_top = 72.0
+margin_right = 727.0
+margin_bottom = 72.0
+rect_scale = Vector2( 0.643816, 0.702767 )
+
+[node name="Salon" type="Sprite" parent="TextureRect"]
+position = Vector2( 400, 442 )
+texture = ExtResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.181
+anchor_top = 0.104
+anchor_right = 0.504
+anchor_bottom = 0.168
+margin_left = 400.0
+margin_top = 200.0
+margin_right = 700.0
+margin_bottom = 475.0
+rect_scale = Vector2( 1, 0.670906 )
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+alignment = 1
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="esp" type="Button" parent="."]
+margin_left = 94.0
+margin_top = 413.129
+margin_right = 616.0
+margin_bottom = 925.129
+rect_scale = Vector2( 0.804824, 0.807545 )
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 15 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 5 )
+text = "Opciones"
+icon = ExtResource( 9 )
+
+[node name="geo" type="Button" parent="."]
+margin_left = 884.0
+margin_top = 109.504
+margin_right = 1406.0
+margin_bottom = 621.504
+rect_scale = Vector2( 0.669951, 0.678739 )
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 15 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 5 )
+text = "Opciones"
+icon = ExtResource( 7 )
+
+[node name="nat" type="Button" parent="."]
+margin_left = 1067.0
+margin_top = 380.278
+margin_right = 1589.0
+margin_bottom = 892.278
+rect_scale = Vector2( 0.487025, 0.488671 )
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 15 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 5 )
+text = "Opciones"
+icon = ExtResource( 8 )
+
+[node name="Hist" type="Button" parent="."]
+margin_left = 767.0
+margin_top = 455.935
+margin_right = 1289.0
+margin_bottom = 967.935
+rect_scale = Vector2( 0.464992, 0.466564 )
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 15 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 5 )
+text = "Opciones"
+icon = ExtResource( 6 )
+
+[node name="Math" type="Button" parent="."]
+margin_left = 159.0
+margin_top = 141.36
+margin_right = 678.0
+margin_bottom = 653.36
+rect_scale = Vector2( 0.650921, 0.650921 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 14 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 6 )
+text = "Jugar"
+icon = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.815686 )
+position = Vector2( 263, 59.7295 )
+scale = Vector2( 0.482841, 0.307768 )
+texture = ExtResource( 10 )
+
+[node name="Salir" type="Button" parent="."]
+margin_left = 336.0
+margin_top = 8.95943
+margin_right = 855.0
+margin_bottom = 520.959
+rect_min_size = Vector2( 180, 120 )
+rect_scale = Vector2( 0.246012, 0.246012 )
+custom_fonts/font = SubResource( 16 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+text = "salir"
+icon = ExtResource( 11 )
+
+[node name="Pers" type="Button" parent="."]
+margin_left = 184.0
+margin_top = 6.96844
+margin_right = 703.0
+margin_bottom = 518.968
+rect_min_size = Vector2( 180, 120 )
+rect_scale = Vector2( 0.246012, 0.246012 )
+custom_fonts/font = SubResource( 16 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+text = "salir"
+icon = ExtResource( 14 )
+
+[node name="Menu" type="Button" parent="."]
+margin_left = 49.0
+margin_top = 2.98648
+margin_right = 568.0
+margin_bottom = 514.986
+rect_min_size = Vector2( 180, 120 )
+rect_scale = Vector2( 0.246012, 0.246012 )
+custom_fonts/font = SubResource( 16 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+text = "salir"
+icon = ExtResource( 13 )
+
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
+
+[connection signal="pressed" from="esp" to="." method="_on_Opciones_pressed"]
+[connection signal="pressed" from="geo" to="." method="_on_Opciones_pressed"]
+[connection signal="pressed" from="nat" to="." method="_on_Opciones_pressed"]
+[connection signal="pressed" from="Hist" to="." method="_on_Opciones_pressed"]
+[connection signal="pressed" from="Math" to="." method="_on_Math_pressed"]
+[connection signal="pressed" from="Salir" to="." method="_on_Salir_pressed"]
+[connection signal="pressed" from="Pers" to="." method="_on_Salir_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_Salir_pressed"]

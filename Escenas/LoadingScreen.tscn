@@ -1,0 +1,14 @@
+[gd_scene format=2]
+
+[node name="LoadingScreen" type="Control"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 36.6957, 20.1593 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 49.0
+rect_scale = Vector2( 1.00003, 1.1916 )
