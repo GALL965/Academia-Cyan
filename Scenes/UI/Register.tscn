@@ -1,12 +1,14 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/fonts/nunito/Nunito-BlackItalic.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/fonts/MPLUSRounded/MPLUSRounded1c-ExtraBold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/fonts/nunito/Nunito-Black.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Assets/Visual/botones/button large.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Visual/iconos/icon eye.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Visual/logo.png" type="Texture" id=5]
 [ext_resource path="res://Assets/background/background cyan.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Visual/botones/large.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Visual/iconos/icon eye close.png" type="Texture" id=8]
+[ext_resource path="res://Scrips/UI/Register..gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -16,33 +18,37 @@ font_data = ExtResource( 2 )
 size = 55
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 500, 500 )
+[sub_resource type="DynamicFont" id=12]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.501961, 0.827451, 1, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
 [sub_resource type="DynamicFont" id=4]
 size = 55
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=5]
-texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 500, 500 )
+[sub_resource type="StreamTexture" id=15]
+flags = 4
+load_path = "res://.import/icon eye.png-e91ff1339bbed060e5cd71412316485a.stex"
 
 [sub_resource type="DynamicFont" id=6]
 size = 55
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=7]
-texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 500, 500 )
-
 [sub_resource type="DynamicFont" id=8]
 size = 45
 font_data = ExtResource( 3 )
-
-[sub_resource type="StyleBoxTexture" id=9]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 1536, 1024 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 39
@@ -56,11 +62,21 @@ font_data = ExtResource( 3 )
 [node name="Register" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 9 )
 
 [node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 6 )
+expand = true
+stretch_mode = 1
+
+[node name="buttonRegisterTexture" type="TextureRect" parent="."]
+margin_left = 738.0
+margin_top = 437.0
+margin_right = 1268.0
+margin_bottom = 817.0
+texture = ExtResource( 7 )
 expand = true
 stretch_mode = 1
 
@@ -85,24 +101,29 @@ custom_fonts/font = SubResource( 1 )
 text = "Registro:"
 
 [node name="CenterVBox" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -580.0
-margin_right = 580.0
+anchor_left = 0.564
+anchor_top = 0.711
+anchor_right = 0.638
+anchor_bottom = 0.711
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 640.0
+margin_bottom = 360.0
+mouse_filter = 2
 custom_constants/separation = 2
 
 [node name="FormGrid" type="GridContainer" parent="CenterVBox"]
-margin_right = 1160.0
-margin_bottom = 600.0
-custom_constants/vseparation = -150
+margin_right = 1374.0
+margin_bottom = 435.0
+mouse_filter = 2
+custom_constants/vseparation = 60
 custom_constants/hseparation = 75
 columns = 2
 
 [node name="CorreoLabel" type="Label" parent="CenterVBox/FormGrid"]
-margin_top = 112.0
+margin_top = 2.0
 margin_right = 344.0
-margin_bottom = 188.0
+margin_bottom = 78.0
 rect_min_size = Vector2( 100, 20 )
 custom_fonts/font = SubResource( 2 )
 text = "Correo:*"
@@ -110,56 +131,91 @@ text = "Correo:*"
 [node name="EmailInput" type="LineEdit" parent="CenterVBox/FormGrid"]
 margin_left = 419.0
 margin_right = 1069.0
-margin_bottom = 300.0
-rect_min_size = Vector2( 650, 300 )
-custom_styles/normal = SubResource( 3 )
+margin_bottom = 80.0
+rect_min_size = Vector2( 650, 80 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 12 )
+custom_styles/normal = SubResource( 14 )
+max_length = 30
 
 [node name="PasswordLabel" type="Label" parent="CenterVBox/FormGrid"]
-margin_top = 262.0
+margin_top = 142.0
 margin_right = 344.0
-margin_bottom = 338.0
+margin_bottom = 218.0
 custom_fonts/font = SubResource( 4 )
 text = "Contraseña:*"
 
 [node name="PasswordInput" type="LineEdit" parent="CenterVBox/FormGrid"]
 margin_left = 419.0
-margin_top = 150.0
+margin_top = 140.0
 margin_right = 1069.0
-margin_bottom = 450.0
-rect_min_size = Vector2( 650, 300 )
-custom_styles/normal = SubResource( 5 )
+margin_bottom = 220.0
+rect_min_size = Vector2( 200, 80 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 12 )
+custom_styles/normal = SubResource( 14 )
+max_length = 12
+secret = true
+
+[node name="ShowPasswordButton" type="TextureButton" parent="CenterVBox/FormGrid/PasswordInput"]
+margin_left = 546.08
+margin_top = -10.9199
+margin_right = 1027.08
+margin_bottom = 508.08
+rect_min_size = Vector2( 50, 50 )
+rect_scale = Vector2( 0.2, 0.2 )
+toggle_mode = true
+texture_normal = SubResource( 15 )
+texture_pressed = ExtResource( 8 )
+expand = true
 
 [node name="ConfirmPasswordLabel" type="Label" parent="CenterVBox/FormGrid"]
-margin_top = 372.0
+margin_top = 280.0
 margin_right = 344.0
-margin_bottom = 527.0
+margin_bottom = 435.0
 custom_fonts/font = SubResource( 6 )
 text = "Confirmar 
 contraseña:*"
 
 [node name="ConfirmPasswordInput" type="LineEdit" parent="CenterVBox/FormGrid"]
 margin_left = 419.0
-margin_top = 300.0
+margin_top = 280.0
 margin_right = 1069.0
-margin_bottom = 600.0
-rect_min_size = Vector2( 650, 300 )
-custom_styles/normal = SubResource( 7 )
+margin_bottom = 380.0
+rect_min_size = Vector2( 100, 100 )
+size_flags_vertical = 0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 12 )
+custom_styles/normal = SubResource( 14 )
+max_length = 12
+secret = true
+
+[node name="ShowPasswordButton2" type="TextureButton" parent="CenterVBox/FormGrid/ConfirmPasswordInput"]
+margin_left = 543.08
+margin_top = 3.08008
+margin_right = 1024.08
+margin_bottom = 522.08
+rect_min_size = Vector2( 50, 50 )
+rect_scale = Vector2( 0.2, 0.2 )
+toggle_mode = true
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 8 )
+expand = true
 
 [node name="RegistrarButton" type="Button" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -578.0
-margin_top = -266.0
-margin_right = -60.0
-margin_bottom = -28.0
+margin_left = -505.0
+margin_top = -160.0
+margin_right = -58.0
+margin_bottom = -40.0
 rect_min_size = Vector2( 380, 120 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 8 )
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/normal = SubResource( 9 )
 text = "Registrarse"
+flat = true
 
 [node name="BottomText" type="HBoxContainer" parent="."]
 anchor_top = 1.0
@@ -170,14 +226,14 @@ margin_bottom = 29.0
 
 [node name="HaveAccountLabel" type="Label" parent="BottomText"]
 margin_top = 63.0
-margin_right = 410.0
+margin_right = 421.0
 margin_bottom = 117.0
 custom_fonts/font = SubResource( 10 )
-text = "¿Ya tiene una cuenta?"
+text = " ¿Ya tiene una cuenta?"
 
 [node name="LoginButton" type="Button" parent="BottomText"]
-margin_left = 414.0
-margin_right = 665.0
+margin_left = 425.0
+margin_right = 676.0
 margin_bottom = 181.0
 custom_colors/font_color = Color( 0.27451, 0.431373, 0.968627, 1 )
 custom_fonts/font = SubResource( 11 )

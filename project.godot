@@ -14,6 +14,12 @@ config/name="Academia Cyan"
 run/main_scene="res://Scenes/UI/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+AuthManager="*res://Scrips/user/auth_manager.gd"
+UserSession="*res://Scrips/user/UserSession.gd"
+UserAuth="*res://Scrips/user/UserAuth.gd"
+
 [display]
 
 window/size/width=1280
