@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/fonts/MPLUSRounded/MPLUSRounded1c-Black.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/fonts/nunito/Nunito-Black.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Scrips/UI/checkbox.gd" type="Script" id=3]
+[ext_resource path="res://Scrips/UI/TapToContinue.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Visual/logo.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Visual/botones/whitecircle.png" type="Texture" id=5]
 [ext_resource path="res://Assets/background/background cyan.png" type="Texture" id=6]
@@ -15,10 +15,11 @@ font_data = ExtResource( 1 )
 size = 42
 font_data = ExtResource( 2 )
 
-[node name="OnboardingWho" type="Control"]
+[node name="Onboardingnegative" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
+next_scene_path = "res://Scenes/UI/DateGenUser.tscn"
 
 [node name="background" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -99,7 +100,6 @@ size_flags_horizontal = 0
 custom_constants/separation = 14
 
 [node name="wholabel" type="Label" parent="CenterVBox"]
-margin_top = -50.0
 margin_right = 1102.0
 margin_bottom = 287.0
 rect_min_size = Vector2( 900, 0 )
