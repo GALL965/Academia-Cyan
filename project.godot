@@ -3,28 +3,33 @@
 ; since the parameters that go here are not all obvious.
 ;
 ; Format:
-;   [section] ; section goes between []
-;   param=value ; assign values to parameters
+;   [section]
+;   param=value
 
 config_version=4
 
 [application]
 
 config/name="Academia Cyan"
+run/main_scene="res://Scenes/UI/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 LoadingScreen="*res://Escenas/LoadingScreen.tscn"
+AuthManager="*res://Scrips/user/auth_manager.gd"
+UserSession="*res://Scrips/user/UserSession.gd"
+UserAuth="*res://Scrips/user/UserAuth.gd"
 
 [display]
 
 window/size/fullscreen=true
+window/size/width=1280
+window/size/height=720
 
 [gui]
 
-common/drop_mouse_on_gui_input_disabled=true
-theme/custom_font="res://Assets/fonts/new_dynamicfont.tres"
+theme/custom_font="AQUÍ_TU_DECISIÓN"
 
 [physics]
 
