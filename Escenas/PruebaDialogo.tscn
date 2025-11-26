@@ -25,3 +25,5 @@ margin_left = 239.617
 margin_top = 242.807
 margin_right = 1263.62
 margin_bottom = 754.807
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

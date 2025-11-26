@@ -15,7 +15,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-SceneLoader="*res://Scripts/SceneLoader.gd"
+LoadingScreen="*res://Escenas/LoadingScreen.tscn"
 
 [display]
 

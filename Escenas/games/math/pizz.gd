@@ -12,8 +12,6 @@ onready var _btn_3 := $"3"
 
 onready var _btn_volver := $volver
 
-
-
 const COLOR_NORMAL := Color(1, 1, 1, 1)
 const COLOR_HOVER  := Color(0.85, 0.85, 0.85, 1)
 
@@ -23,13 +21,12 @@ func _ready():
 	_idle_buttons = [ _btn_volver, _btn_1, _btn_2, _btn_3 ]
 	
 	for b in [ _btn_volver, _btn_1, _btn_2, _btn_3 ]:
-		# Escala base para las animaciones
+
 		_base_scale[b] = b.rect_scale
 
-		# Guarda posición base para el flotado
 		if b in _idle_buttons:
 			_base_pos[b] = b.rect_position
-			_idle_phase[b] = randf() * TAU  # desfase para que no se muevan igual
+			_idle_phase[b] = randf() * TAU  
 
 		b.modulate = COLOR_NORMAL
 		b.connect("mouse_entered", self, "_on_button_mouse_entered", [b])
@@ -37,14 +34,6 @@ func _ready():
 		b.connect("pressed", self, "_on_button_pressed_anim", [b])
 
 	_play_intro_animation()
-
-# =====================
-# LÓGICA DE NAVEGACIÓN
-# =====================
-
-
-
-
 
 func _on_Jugar_pressed():
 	_start_exit_animation("_go_to_world")
@@ -63,11 +52,6 @@ func _on_Salir_pressed():
 
 func _quit_game():
 	get_tree().quit()
-
-# =====================
-# ANIMACIONES MENÚ
-# =====================
-
 
 func _play_intro_animation():
 
@@ -91,7 +75,6 @@ func _play_intro_animation():
 		Tween.EASE_OUT
 	)
 	_tween.start()
-
 
 func _start_exit_animation(next_method_name):
 	_tween.stop_all()
@@ -126,12 +109,8 @@ func _start_exit_animation(next_method_name):
 	_tween.start()
 
 func _on_exit_animation_finished(next_method_name):
-	# Llamamos al método que cambia de escena / sale del juego
-	call_deferred(next_method_name)
 
-# =====================
-# ANIMACIONES DE HOVER Y CLICK
-# =====================
+	call_deferred(next_method_name)
 
 func _on_button_mouse_entered(button):
 	var base = _base_scale[button]
@@ -153,7 +132,6 @@ func _on_button_mouse_entered(button):
 	)
 	_tween.start()
 
-
 func _on_button_mouse_exited(button):
 	var base = _base_scale[button]
 	_tween.interpolate_property(
@@ -173,7 +151,6 @@ func _on_button_mouse_exited(button):
 		Tween.EASE_OUT
 	)
 	_tween.start()
-
 
 func _on_button_pressed_anim(button):
 	var base = _base_scale[button]
@@ -200,9 +177,8 @@ func _process(delta):
 	var t = OS.get_ticks_msec() / 1000.0
 	for b in _idle_buttons:
 		var phase = _idle_phase[b]
-		var y = sin(t * 1.5 + phase) * 2.0  # amplitud MUY baja (2 px)
+		var y = sin(t * 1.5 + phase) * 2.0  
 		b.rect_position = _base_pos[b] + Vector2(0, y)
 
-
 func _on_volver_pressed():
-	get_tree().change_scene("res://Escenas/menu/MainMenu.tscn")
+	LoadingScreen.goto_scene("res://Escenas/menu/MainMenu.tscn")

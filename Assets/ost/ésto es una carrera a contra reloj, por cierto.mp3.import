@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ésto es una carrera a contra reloj, por cierto.mp3-fcf2c0fd4817b6f97a741bf094419914.mp3str"
+
+[deps]
+
+source_file="res://Assets/ost/ésto es una carrera a contra reloj, por cierto.mp3"
+dest_files=[ "res://.import/ésto es una carrera a contra reloj, por cierto.mp3-fcf2c0fd4817b6f97a741bf094419914.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

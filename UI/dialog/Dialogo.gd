@@ -1,10 +1,13 @@
 extends Control
 
+signal dialog_finished
 export(float) var text_speed := 0.03
 
 var dialog_lines := []
 var expression_paths := []
 var voice_path := ""
+
+export(String, FILE, "*.tscn") var next_scene_path := ""
 
 var dialog_index := 0
 var current_text := ""
@@ -14,9 +17,7 @@ var finished := false
 var voice_stream = null
 
 onready var text_label   := $PanelContainer/MarginContainer/TextLabel
-
 onready var portrait     := $Character
-
 onready var char_timer   := $CharTimer
 onready var voice_player := $VoicePlayer
 
@@ -59,8 +60,8 @@ func start_dialog_from_json(json_path: String) -> void:
 	for entry in data["conversation"]:
 		lines.append(entry.get("text", ""))
 		expressions.append(entry.get("expression", ""))
-		voice = entry.get("voice", voice) # usa la última, o la misma siempre
-	
+		voice = entry.get("voice", voice) 
+
 	start_dialog_from_arrays(lines, expressions, voice)
 
 func _unhandled_input(event):
@@ -69,16 +70,16 @@ func _unhandled_input(event):
 	
 	if event.is_action_pressed("ui_accept"):
 		if finished:
-			queue_free()
+			_finish_dialog()           
 		elif is_typing:
 			_finish_current_line()
 		else:
 			_next_line()
 
 func _next_line() -> void:
+
 	if dialog_index >= dialog_lines.size():
-		# Ya no hay más líneas
-		finished = true
+		_finish_dialog()
 		return
 	
 	current_text = str(dialog_lines[dialog_index])
@@ -99,8 +100,6 @@ func _next_line() -> void:
 			else:
 				print("No pude cargar expresión: ", path)
 
-	
-	# Iniciar timer para letra por letra
 	char_timer.start(text_speed)
 
 func _finish_current_line() -> void:
@@ -126,3 +125,15 @@ func _on_CharTimer_timeout() -> void:
 		voice_player.play()
 	
 	char_index += 1
+
+func _finish_dialog() -> void:
+
+	if finished:
+		return
+	
+	finished = true
+	hide()
+	emit_signal("dialog_finished")
+	
+	if next_scene_path != "":
+		get_tree().change_scene(next_scene_path)

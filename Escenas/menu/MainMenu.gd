@@ -1,13 +1,9 @@
 extends Control
 var _base_scale := {}
 
-
-
 var _idle_buttons := []
 var _base_pos := {}
 var _idle_phase := {}
-
-
 
 onready var _tween := $Tween
 onready var _vbox := $VBoxContainer
@@ -212,4 +208,4 @@ func _process(delta):
 		b.rect_position = _base_pos[b] + Vector2(0, y)
 
 func _on_Math_pressed():
-	get_tree().change_scene("res://Escenas/pizz.tscn")
+	LoadingScreen.goto_scene("res://Escenas/games/math/pizz.tscn")
