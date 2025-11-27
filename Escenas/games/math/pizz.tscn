@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Escenas/games/math/pizz.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Visual/fondos/pizz.png" type="Texture" id=2]
 [ext_resource path="res://assets/Sour_Gummy/static/SourGummy-Black.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/Visual/botones/atras.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Visual/botones/play.png" type="Texture" id=5]
+[ext_resource path="res://Assets/fonts/MPLUSRounded/MPLUSRounded1c-Black.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Assets/ost/Rafflesia-Channel.mp3" type="AudioStream" id=12]
 
 [sub_resource type="Theme" id=1]
@@ -34,6 +35,10 @@ region_rect = Rect2( 0, 0, 500, 250 )
 
 [sub_resource type="StyleBoxTexture" id=13]
 region_rect = Rect2( 0, 0, 500, 250 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 30
+font_data = ExtResource( 6 )
 
 [node name="pizz" type="Control"]
 rect_scale = Vector2( 1, 1.00453 )
@@ -133,6 +138,7 @@ margin_right = 825.0
 margin_bottom = 487.016
 rect_pivot_offset = Vector2( -888, -21.9008 )
 custom_colors/font_color = Color( 0.0431373, 0.0117647, 1, 1 )
+custom_fonts/font = SubResource( 17 )
 text = "Cartametrica"
 
 [node name="Label3" type="Label" parent="."]
@@ -142,6 +148,7 @@ margin_right = 1153.0
 margin_bottom = 490.998
 rect_pivot_offset = Vector2( -888, -21.9008 )
 custom_colors/font_color = Color( 0.0431373, 0.0117647, 1, 1 )
+custom_fonts/font = SubResource( 17 )
 text = "Aricombate"
 
 [node name="Label" type="Label" parent="."]
@@ -150,6 +157,7 @@ margin_top = 436.025
 margin_right = 493.0
 margin_bottom = 485.025
 custom_colors/font_color = Color( 0.0431373, 0.0117647, 1, 1 )
+custom_fonts/font = SubResource( 17 )
 text = "Punto de fusion"
 
 [connection signal="pressed" from="1" to="." method="_on_1_pressed"]

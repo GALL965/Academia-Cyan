@@ -179,6 +179,7 @@ margin_right = 220.0
 margin_bottom = 220.0
 rect_min_size = Vector2( 220, 220 )
 custom_styles/normal = SubResource( 11 )
+toggle_mode = true
 
 [node name="GirlIcon" type="TextureRect" parent="CenterVBox/ContentHBox/GenderVBox/GenderOptionsHBox/GirlVBox/GirlButton"]
 margin_left = 6.0
@@ -207,6 +208,7 @@ margin_right = 220.0
 margin_bottom = 220.0
 rect_min_size = Vector2( 220, 220 )
 custom_styles/normal = SubResource( 11 )
+toggle_mode = true
 
 [node name="boyIcon" type="TextureRect" parent="CenterVBox/ContentHBox/GenderVBox/GenderOptionsHBox/boyVBox/boyButton"]
 margin_left = 6.0
@@ -360,3 +362,5 @@ margin_bottom = 166.0
 rect_min_size = Vector2( 30, 30 )
 texture = ExtResource( 5 )
 expand = true
+
+[connection signal="pressed" from="RegistrarButton" to="." method="_on_RegistrarButton_pressed"]

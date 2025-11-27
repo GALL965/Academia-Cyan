@@ -179,6 +179,17 @@ func _process(delta):
 		var phase = _idle_phase[b]
 		var y = sin(t * 1.5 + phase) * 2.0  
 		b.rect_position = _base_pos[b] + Vector2(0, y)
+		
+		
+		
+
+
 
 func _on_volver_pressed():
 	LoadingScreen.goto_scene("res://Escenas/menu/MainMenu.tscn")
+
+
+
+
+func _on_1_pressed():
+	LoadingScreen.goto_scene("res://Escenas/games/math/Runas.tscn")

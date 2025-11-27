@@ -156,11 +156,6 @@ func _update_selected_date() -> void:
 	else:
 		selected_date_lbl.text = "Selecciona tu fecha"
 
-
-# -------------------------------------------------------------------
-#                          CONTINUAR
-# -------------------------------------------------------------------
-
 func _update_continue_state() -> void:
 	var gender_ok = selected_gender != GENDER_NONE
 	var date_ok = selected_day > 0 and selected_month > 0 and selected_year > 0
@@ -168,15 +163,4 @@ func _update_continue_state() -> void:
 
 
 func _on_RegistrarButton_pressed() -> void:
-	if continue_button.disabled:
-		return
-
-	# Guardar en UserSession (autoload)
-	if Engine.has_singleton("UserSession"):
-		UserSession.set_child_gender(selected_gender)
-		UserSession.set_birth_date(selected_day, selected_month, selected_year)
-		print("UserSession.child_gender =", UserSession.child_gender)
-		print("UserSession.birth =", UserSession.birth_day, UserSession.birth_month, UserSession.birth_year)
-
-	# Cambiar a la siguiente escena del flujo
-	get_tree().change_scene("res://Scenes/UI/DateGenUser.tscn") # cambia la ruta si es otra
+	LoadingScreen.goto_scene("res://Scenes/UI/OnboardingAvatar.tscn")

@@ -59,4 +59,4 @@ func _on_confirm_pressed():
 	# GlobalData.selected_avatar = current_index
 
 	# Ejemplo: cambiar de escena (ajusta la ruta)
-	# get_tree().change_scene("res://Scenes/UI/MainMenu.tscn")
+	LoadingScreen.goto_scene("res://Scenes/UI/start.tscn")

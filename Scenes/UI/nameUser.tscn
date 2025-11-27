@@ -80,7 +80,6 @@ margin_bottom = 360.0
 custom_constants/separation = 2
 
 [node name="FormGrid" type="GridContainer" parent="CenterVBox"]
-margin_top = 70.0
 margin_right = 1160.0
 margin_bottom = 500.0
 custom_constants/vseparation = -100

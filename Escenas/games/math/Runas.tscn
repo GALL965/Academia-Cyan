@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Escenas/games/math/Runas.gd" type="Script" id=1]
 [ext_resource path="res://Assets/ost/ésto es una carrera a contra reloj, por cierto.mp3" type="AudioStream" id=2]
@@ -6,8 +6,56 @@
 [ext_resource path="res://Assets/Visual/fondos/fond2.png" type="Texture" id=4]
 [ext_resource path="res://Assets/sfx/m5.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/sfx/m2.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/fonts/MPLUSRounded/MPLUSRounded1c-Black.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Assets/Visual/botones/runs.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Visual/runas_theme.tres" type="Theme" id=9]
+[ext_resource path="res://Assets/Visual/botones/runs2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/fonts/nunito/Nunito-ExtraBold.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Assets/Visual/botones/runs3.png" type="Texture" id=12]
 
-[sub_resource type="Theme" id=1]
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 512, 720 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 512, 720 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+content_margin_right = 14.0
+content_margin_top = 14.0
+content_margin_bottom = 7.0
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 512, 720 )
+margin_left = 25.0
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 512, 720 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 60
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 30
+font_data = ExtResource( 7 )
 
 [node name="Runas" type="Control"]
 margin_left = 116.0
@@ -27,95 +75,147 @@ rect_scale = Vector2( 0.775256, 0.775256 )
 texture = ExtResource( 4 )
 
 [node name="TargetLabel" type="Label" parent="."]
-margin_left = 70.0
-margin_top = 32.0
-margin_right = 227.0
-margin_bottom = 81.0
+margin_left = -44.0
+margin_top = 126.0
+margin_right = 124.0
+margin_bottom = 182.0
+custom_fonts/font = SubResource( 4 )
+text = "asdasda"
 
 [node name="CurrentLabel" type="Label" parent="."]
-margin_left = 28.0
-margin_top = 317.0
-margin_right = 185.0
-margin_bottom = 366.0
+margin_left = -42.0
+margin_top = 418.0
+margin_right = 115.0
+margin_bottom = 474.0
+custom_fonts/font = SubResource( 5 )
+text = "asd"
 
 [node name="TimeLabel" type="Label" parent="."]
-margin_left = 49.0
-margin_top = 140.0
-margin_right = 206.0
-margin_bottom = 189.0
+margin_left = -40.0
+margin_top = 267.0
+margin_right = 117.0
+margin_bottom = 323.0
+custom_fonts/font = SubResource( 6 )
+text = "asd"
 
 [node name="GridContainer" type="GridContainer" parent="."]
-anchor_right = 1.0
-margin_left = 422.0
-margin_top = 221.0
-margin_right = 1142.0
-margin_bottom = 513.0
+anchor_left = 0.519
+anchor_top = 0.5
+anchor_right = 0.519
+anchor_bottom = 0.5
+margin_left = 476.0
+margin_top = 128.0
+margin_right = 676.0
+margin_bottom = 428.0
 columns = 3
 
 [node name="RunaButton0" type="Button" parent="GridContainer"]
-margin_right = 33.0
-margin_bottom = 55.0
-theme = SubResource( 1 )
+margin_right = 72.0
+margin_bottom = 91.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 3 )
 toggle_mode = true
 text = "0"
 
 [node name="RunaButton1" type="Button" parent="GridContainer"]
-margin_left = 37.0
-margin_right = 70.0
-margin_bottom = 55.0
+margin_left = 76.0
+margin_right = 148.0
+margin_bottom = 91.0
+theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 toggle_mode = true
 text = "0"
 
 [node name="RunaButton2" type="Button" parent="GridContainer"]
-margin_left = 74.0
-margin_right = 107.0
-margin_bottom = 55.0
+margin_left = 152.0
+margin_right = 224.0
+margin_bottom = 91.0
+theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 toggle_mode = true
 text = "0"
 
 [node name="RunaButton3" type="Button" parent="GridContainer"]
-margin_top = 59.0
-margin_right = 33.0
-margin_bottom = 114.0
+margin_top = 95.0
+margin_right = 72.0
+margin_bottom = 186.0
+theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 toggle_mode = true
 text = "0"
 
 [node name="RunaButton4" type="Button" parent="GridContainer"]
-margin_left = 37.0
-margin_top = 59.0
-margin_right = 70.0
-margin_bottom = 114.0
+margin_left = 76.0
+margin_top = 95.0
+margin_right = 148.0
+margin_bottom = 186.0
+theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 toggle_mode = true
 text = "0"
 
 [node name="RunaButton5" type="Button" parent="GridContainer"]
-margin_left = 74.0
-margin_top = 59.0
-margin_right = 107.0
-margin_bottom = 114.0
+margin_left = 152.0
+margin_top = 95.0
+margin_right = 224.0
+margin_bottom = 186.0
+theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 toggle_mode = true
 text = "0"
 
 [node name="RunaButton6" type="Button" parent="GridContainer"]
-margin_top = 118.0
-margin_right = 33.0
-margin_bottom = 173.0
+margin_top = 190.0
+margin_right = 72.0
+margin_bottom = 281.0
+theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 toggle_mode = true
 text = "0"
 
 [node name="RunaButton7" type="Button" parent="GridContainer"]
-margin_left = 37.0
-margin_top = 118.0
-margin_right = 70.0
-margin_bottom = 173.0
+margin_left = 76.0
+margin_top = 190.0
+margin_right = 148.0
+margin_bottom = 281.0
+theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 toggle_mode = true
 text = "0"
 
 [node name="RunaButton8" type="Button" parent="GridContainer"]
-margin_left = 74.0
-margin_top = 118.0
-margin_right = 107.0
-margin_bottom = 173.0
+margin_left = 152.0
+margin_top = 190.0
+margin_right = 224.0
+margin_bottom = 281.0
+theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 toggle_mode = true
 text = "0"
 
@@ -124,16 +224,19 @@ wait_time = 83.0
 one_shot = true
 
 [node name="CastButton" type="Button" parent="."]
-margin_left = 415.0
-margin_top = 427.0
-margin_right = 540.0
-margin_bottom = 482.0
+margin_left = 478.0
+margin_top = 443.0
+margin_right = 696.0
+margin_bottom = 532.0
+custom_fonts/font = SubResource( 9 )
+text = "Lanzar!"
 
 [node name="InfoLabel" type="Label" parent="."]
-margin_left = 755.0
-margin_top = 289.0
-margin_right = 916.0
-margin_bottom = 338.0
+margin_left = 411.0
+margin_right = 623.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 7 )
+text = "asdasdasdasd"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )

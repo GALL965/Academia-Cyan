@@ -18,8 +18,8 @@ var confirm_password_visible := false
 
 func _ready() -> void:
 	# Conectar botones de mostrar/ocultar contraseña
-	show_password_button.connect("pressed", self, "_on_show_password_pressed")
-	show_password_button2.connect("pressed", self, "_on_show_confirm_password_pressed")
+	#show_password_button.connect("pressed", self, "_on_show_password_pressed")
+	#show_password_button2.connect("pressed", self, "_on_show_confirm_password_pressed")
 
 	# Botones principales
 	register_button.connect("pressed", self, "_on_register_pressed")
