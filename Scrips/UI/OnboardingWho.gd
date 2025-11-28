@@ -115,17 +115,7 @@ func _update_continue_state() -> void:
 
 	continue_button.disabled = not enabled
 
-	# La imagen SIEMPRE visible; solo cambiamos intensidad
-	false_continue_bg.visible = true
 
-	if enabled:
-		# Botón activo, fondo “normal”
-		continue_button.modulate  = COLOR_SELECTED
-		false_continue_bg.modulate = COLOR_SELECTED
-	else:
-		# Botón desactivado, fondo más tenue
-		continue_button.modulate  = COLOR_UNSELECTED
-		false_continue_bg.modulate = COLOR_UNSELECTED
 
 
 

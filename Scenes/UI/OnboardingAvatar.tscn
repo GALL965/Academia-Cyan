@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Assets/Visual/botones/anterior.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Visual/chars/player/boy/charPlayer.png" type="Texture" id=2]
@@ -15,14 +15,23 @@
 [ext_resource path="res://Assets/Visual/botones/anterior1.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Visual/botones/siguiente3.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Visual/botones/siguiente1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Visual/botones/largeh.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Visual/botones/largeL.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=8]
 size = 45
 font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 16 )
+
+[sub_resource type="StyleBoxTexture" id=21]
+texture = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 1000, 250 )
+
+[sub_resource type="StyleBoxTexture" id=22]
 texture = ExtResource( 6 )
-region_rect = Rect2( 0, 0, 1536, 1024 )
+region_rect = Rect2( 0, 0, 1000, 250 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 45
@@ -85,15 +94,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -904.0
-margin_top = -232.0
-margin_right = -358.0
-margin_bottom = 107.0
-rect_min_size = Vector2( 380, 120 )
+margin_left = -800.0
+margin_top = -90.0
+margin_right = -500.0
+margin_bottom = -20.0
 custom_fonts/font = SubResource( 8 )
 custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/normal = SubResource( 22 )
 text = "Confirmar"
 
 [node name="Steps" type="VBoxContainer" parent="."]

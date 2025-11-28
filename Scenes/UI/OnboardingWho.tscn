@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/fonts/MPLUSRounded/MPLUSRounded1c-Black.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/fonts/nunito/Nunito-BlackItalic.ttf" type="DynamicFontData" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/fonts/nunito/Nunito-Black.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Assets/Visual/botones/large.png" type="Texture" id=8]
 [ext_resource path="res://Scrips/UI/OnboardingWho.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Visual/botones/largeL.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
@@ -58,9 +59,13 @@ corner_radius_bottom_left = 10
 size = 37
 font_data = ExtResource( 7 )
 
-[sub_resource type="StyleBoxTexture" id=9]
+[sub_resource type="StyleBoxTexture" id=22]
 texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 1536, 1024 )
+region_rect = Rect2( 0, 0, 1000, 250 )
+
+[sub_resource type="StyleBoxTexture" id=21]
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 1000, 250 )
 
 [node name="OnboardingWho" type="Control"]
 anchor_right = 1.0
@@ -71,14 +76,6 @@ script = ExtResource( 9 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 5 )
-expand = true
-
-[node name="buttonFalseContinue" type="TextureRect" parent="."]
-margin_left = 372.0
-margin_top = 500.0
-margin_right = 918.0
-margin_bottom = 829.0
-texture = ExtResource( 8 )
 expand = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -275,20 +272,17 @@ custom_styles/normal = SubResource( 7 )
 
 [node name="ContinueButton" type="Button" parent="."]
 anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -175.0
-margin_top = -108.0
-margin_right = 170.0
-margin_bottom = -8.0
-rect_min_size = Vector2( 100, 100 )
+anchor_top = 0.939
+anchor_right = 0.722
+anchor_bottom = 0.954
+margin_left = -136.0
+margin_top = -47.08
+margin_right = -136.0
+margin_bottom = 4.92004
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 8 )
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 9 )
-custom_styles/disabled = SubResource( 9 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = SubResource( 22 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/disabled = SubResource( 21 )
+custom_styles/normal = SubResource( 22 )
 text = "Continuar"
-flat = true
