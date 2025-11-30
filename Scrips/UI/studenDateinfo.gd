@@ -1,7 +1,9 @@
 extends Control
 
-# ==== RUTAS DE LOS NODOS (según tu .tscn) ====
+# ==== SEÑALES HACIA LoginFlow ====
+signal go_to_name_user
 
+# ==== RUTAS DE LOS NODOS (según tu .tscn) ====
 onready var girl_button       = $CenterVBox/ContentHBox/GenderVBox/GenderOptionsHBox/GirlVBox/GirlButton
 onready var boy_button        = $CenterVBox/ContentHBox/GenderVBox/GenderOptionsHBox/boyVBox/boyButton
 
@@ -12,9 +14,7 @@ onready var selected_date_lbl = $CenterVBox/ContentHBox/BirthVBox/DatePanel/Date
 
 onready var continue_button   = $RegistrarButton   # botón "Continuar" morado
 
-
 # ==== CONSTANTES Y ESTADO ====
-
 const GENDER_NONE := ""
 const GENDER_GIRL := "girl"   # Niña
 const GENDER_BOY  := "boy"    # Niño
@@ -31,6 +31,10 @@ var selected_year   := -1
 func _ready() -> void:
 	_setup_gender_buttons()
 	_setup_date_options()
+
+	if not continue_button.is_connected("pressed", self, "_on_continue_pressed"):
+		continue_button.connect("pressed", self, "_on_continue_pressed")
+
 	_update_continue_state()
 
 
@@ -39,8 +43,12 @@ func _ready() -> void:
 # -------------------------------------------------------------------
 
 func _setup_gender_buttons() -> void:
-	girl_button.connect("pressed", self, "_on_girl_pressed")
-	boy_button.connect("pressed", self, "_on_boy_pressed")
+	if not girl_button.is_connected("pressed", self, "_on_girl_pressed"):
+		girl_button.connect("pressed", self, "_on_girl_pressed")
+
+	if not boy_button.is_connected("pressed", self, "_on_boy_pressed"):
+		boy_button.connect("pressed", self, "_on_boy_pressed")
+
 	_update_gender_visuals()
 
 
@@ -97,11 +105,14 @@ func _setup_date_options() -> void:
 		year_option.add_item(str(y))
 
 	# Conectar señales de selección
-	day_option.connect("item_selected", self, "_on_day_selected")
-	month_option.connect("item_selected", self, "_on_month_selected")
-	year_option.connect("item_selected", self, "_on_year_selected")
+	if not day_option.is_connected("item_selected", self, "_on_day_selected"):
+		day_option.connect("item_selected", self, "_on_day_selected")
+	if not month_option.is_connected("item_selected", self, "_on_month_selected"):
+		month_option.connect("item_selected", self, "_on_month_selected")
+	if not year_option.is_connected("item_selected", self, "_on_year_selected"):
+		year_option.connect("item_selected", self, "_on_year_selected")
 
-	# Limitar tamaño + arreglar tema del popup (texto blanco, scroll)
+	# Limitar tamaño + popup
 	_setup_popup(day_option)
 	_setup_popup(month_option)
 	_setup_popup(year_option)
@@ -119,7 +130,7 @@ func _on_popup_about_to_show(opt: OptionButton) -> void:
 	# Tamaño: ancho del botón, alto fijo con scroll
 	popup.rect_size = Vector2(opt.rect_size.x, POPUP_MAX_HEIGHT)
 
-	# Fuente y colores del popup (forzamos texto blanco para que se vea)
+	# Fuente y colores del popup
 	var font := DynamicFont.new()
 	font.font_data = load("res://Assets/fonts/nunito/Nunito-Black.ttf")
 	font.size = 24
@@ -156,11 +167,34 @@ func _update_selected_date() -> void:
 	else:
 		selected_date_lbl.text = "Selecciona tu fecha"
 
+
 func _update_continue_state() -> void:
 	var gender_ok = selected_gender != GENDER_NONE
 	var date_ok = selected_day > 0 and selected_month > 0 and selected_year > 0
 	continue_button.disabled = not (gender_ok and date_ok)
 
 
+func _on_continue_pressed() -> void:
+	# Defensa extra
+	if selected_gender == GENDER_NONE:
+		print("Falta seleccionar género")
+		return
+	if selected_day <= 0 or selected_month <= 0 or selected_year <= 0:
+		print("Falta seleccionar fecha completa")
+		return
+
+	# Aquí podrías guardar en tu autoload UserSession si quieres:
+	if Engine.has_singleton("UserSession"):
+		if selected_gender == GENDER_GIRL:
+			UserSession.set_gender("girl")
+		elif selected_gender == GENDER_BOY:
+			UserSession.set_gender("boy")
+		UserSession.set_birthdate(selected_day, selected_month, selected_year)
+
+	# Avisar al flujo que toca pasar a NameUser
+	emit_signal("go_to_name_user")
+
+
+# Compatibilidad por si el .tscn todavía tiene conectada esta función
 func _on_RegistrarButton_pressed() -> void:
-	LoadingScreen.goto_scene("res://Scenes/UI/OnboardingAvatar.tscn")
+	_on_continue_pressed()

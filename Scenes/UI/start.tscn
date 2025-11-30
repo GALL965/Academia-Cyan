@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/fonts/MPLUSRounded/MPLUSRounded1c-ExtraBold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/fonts/nunito/Nunito-BlackItalic.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Assets/Visual/fondos/fond1.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/UI/start.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
@@ -27,15 +26,6 @@ font_data = ExtResource( 2 )
 position = Vector2( -105, 26 )
 scale = Vector2( 0.72779, 0.72779 )
 script = ExtResource( 4 )
-
-[node name="TextureRect" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -39.8467
-margin_right = 2160.0
-margin_bottom = 1040.15
-rect_scale = Vector2( 1, 1.1788 )
-texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5

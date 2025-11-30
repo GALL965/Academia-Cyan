@@ -1,137 +1,87 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/fonts/nunito/Nunito-BlackItalic.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/fonts/MPLUSRounded/MPLUSRounded1c-ExtraBold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/fonts/nunito/Nunito-Black.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/Visual/logo.png" type="Texture" id=4]
-[ext_resource path="res://Assets/background/background cyan.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Visual/botones/largeh.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Visual/botones/large.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Visual/botones/button large.png" type="Texture" id=7]
+[ext_resource path="res://Assets/fonts/nunito/Nunito-Bold.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Assets/Visual/botones/whitecircle.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Visual/botones/largeL.png" type="Texture" id=9]
+[ext_resource path="res://Scrips/UI/ZoomButton.gd" type="Script" id=10]
+[ext_resource path="res://Scrips/UI/nameUser.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 45
+size = 55
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 500, 500 )
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=4]
-size = 45
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.501961, 0.827451, 1, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="DynamicFont" id=5]
+size = 55
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=5]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 500, 500 )
-
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=6]
 size = 45
 font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 1000, 250 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 1000, 250 )
 
 [sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 6 )
-region_rect = Rect2( 0, 0, 1536, 1024 )
+region_rect = Rect2( 0, 0, 1000, 250 )
 
-[node name="Register" type="Control"]
+[node name="nameUser" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-
-[node name="background" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 5 )
-expand = true
-stretch_mode = 1
+script = ExtResource( 11 )
 
 [node name="logo" type="TextureRect" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -143.0
-margin_top = 21.0
-margin_right = -9.0
-margin_bottom = 155.0
+margin_left = -151.0
+margin_top = 18.0
+margin_right = -17.0
+margin_bottom = 152.0
 rect_min_size = Vector2( 95, 95 )
 texture = ExtResource( 4 )
 expand = true
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
-margin_left = 219.0
-margin_right = -294.0
-margin_bottom = 100.0
+margin_left = 224.0
+margin_top = 43.0
+margin_right = -289.0
+margin_bottom = 143.0
 rect_min_size = Vector2( 50, 50 )
 size_flags_stretch_ratio = 0.0
 custom_fonts/font = SubResource( 1 )
 text = "Algunos datos sobre el alumno"
-
-[node name="CenterVBox" type="VBoxContainer" parent="."]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -1160.0
-margin_top = -360.0
-margin_bottom = 360.0
-custom_constants/separation = 2
-
-[node name="FormGrid" type="GridContainer" parent="CenterVBox"]
-margin_right = 1160.0
-margin_bottom = 500.0
-custom_constants/vseparation = -100
-custom_constants/hseparation = 20
-columns = 2
-
-[node name="CorreoLabel" type="Label" parent="CenterVBox/FormGrid"]
-margin_top = 119.0
-margin_right = 459.0
-margin_bottom = 181.0
-rect_min_size = Vector2( 100, 20 )
-custom_fonts/font = SubResource( 2 )
-text = "Nombre y apellidos*:"
-
-[node name="EmailInput" type="LineEdit" parent="CenterVBox/FormGrid"]
-margin_left = 479.0
-margin_right = 1129.0
-margin_bottom = 300.0
-rect_min_size = Vector2( 650, 300 )
-custom_styles/normal = SubResource( 3 )
-
-[node name="PasswordLabel" type="Label" parent="CenterVBox/FormGrid"]
-margin_top = 254.0
-margin_right = 459.0
-margin_bottom = 446.0
-custom_fonts/font = SubResource( 4 )
-text = "¿Como quieres que te llamemos?(opcional)"
-autowrap = true
-
-[node name="PasswordInput" type="LineEdit" parent="CenterVBox/FormGrid"]
-margin_left = 479.0
-margin_top = 200.0
-margin_right = 1129.0
-margin_bottom = 500.0
-rect_min_size = Vector2( 650, 300 )
-custom_styles/normal = SubResource( 5 )
-
-[node name="RegistrarButton" type="Button" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -917.0
-margin_top = -272.0
-margin_right = -371.0
-margin_bottom = 67.0
-rect_min_size = Vector2( 380, 120 )
-custom_fonts/font = SubResource( 8 )
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/normal = SubResource( 9 )
-text = "Continuar"
 
 [node name="Steps" type="VBoxContainer" parent="."]
 margin_top = 265.0
@@ -177,3 +127,74 @@ margin_bottom = 166.0
 rect_min_size = Vector2( 30, 30 )
 texture = ExtResource( 8 )
 expand = true
+
+[node name="CenterVBox" type="VBoxContainer" parent="."]
+anchor_left = 0.104
+anchor_top = 0.126
+anchor_right = 1.0
+anchor_bottom = 0.735
+margin_left = -42.12
+margin_top = 47.28
+margin_right = 57.88
+margin_bottom = 49.28
+custom_constants/separation = 2
+alignment = 1
+
+[node name="FormGrid" type="GridContainer" parent="CenterVBox"]
+margin_top = 104.0
+margin_right = 1246.0
+margin_bottom = 336.0
+custom_constants/vseparation = 80
+custom_constants/hseparation = 91
+columns = 2
+
+[node name="CorreoLabel" type="Label" parent="CenterVBox/FormGrid"]
+margin_right = 570.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 100, 20 )
+custom_fonts/font = SubResource( 2 )
+text = "Nombre completo"
+
+[node name="EmailInput" type="LineEdit" parent="CenterVBox/FormGrid"]
+margin_left = 661.0
+margin_right = 1161.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 200, 50 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+
+[node name="PasswordLabel" type="Label" parent="CenterVBox/FormGrid"]
+margin_top = 156.0
+margin_right = 570.0
+margin_bottom = 232.0
+custom_fonts/font = SubResource( 5 )
+text = "apodo para el juego:*"
+
+[node name="PasswordInput" type="LineEdit" parent="CenterVBox/FormGrid"]
+margin_left = 661.0
+margin_top = 156.0
+margin_right = 1161.0
+margin_bottom = 232.0
+rect_min_size = Vector2( 500, 50 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+secret = true
+
+[node name="continueButton" type="Button" parent="."]
+anchor_right = 0.049
+anchor_bottom = 0.012
+margin_left = 925.0
+margin_top = 592.0
+margin_right = 1189.0
+margin_bottom = 654.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+text = "Continuar"
+script = ExtResource( 10 )
+
+[connection signal="pressed" from="continueButton" to="." method="_on_continueButton_pressed"]

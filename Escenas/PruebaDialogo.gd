@@ -11,5 +11,5 @@ func _ready() -> void:
 	dialog_box.start_dialog_from_json("res://UI/dialog/dialogo.json")
 	
 func _on_dialog_finished() -> void:
-	print("El diálogo terminó, aquí haces lo que quieras")
-	LoadingScreen.goto_scene("res://Escenas/menu/MainMenu.tscn")
+
+	LoadingScreen.goto_scene("res://Escenas/intro.tscn")

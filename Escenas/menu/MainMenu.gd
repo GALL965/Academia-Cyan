@@ -209,3 +209,9 @@ func _process(delta):
 
 func _on_Math_pressed():
 	LoadingScreen.goto_scene("res://Escenas/games/math/pizz.tscn")
+
+
+
+
+func _on_Pers_pressed():
+	LoadingScreen.goto_scene("res://Escenas/Stats.tscn")

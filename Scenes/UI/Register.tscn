@@ -1,11 +1,10 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/fonts/nunito/Nunito-BlackItalic.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/fonts/MPLUSRounded/MPLUSRounded1c-ExtraBold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/fonts/nunito/Nunito-Black.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/Visual/iconos/icon eye.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Visual/logo.png" type="Texture" id=5]
-[ext_resource path="res://Assets/background/background cyan.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Visual/botones/large.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Visual/iconos/icon eye close.png" type="Texture" id=8]
 [ext_resource path="res://Scrips/UI/Register..gd" type="Script" id=9]
@@ -73,13 +72,6 @@ font_data = ExtResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 9 )
-
-[node name="background" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 6 )
-expand = true
-stretch_mode = 1
 
 [node name="logo" type="TextureRect" parent="."]
 anchor_left = 1.0
@@ -242,3 +234,5 @@ custom_colors/font_color = Color( 0.27451, 0.431373, 0.968627, 1 )
 custom_fonts/font = SubResource( 11 )
 text = " Inicia sesión"
 flat = true
+
+[connection signal="pressed" from="BottomText/LoginButton" to="." method="_on_LoginButton_pressed"]

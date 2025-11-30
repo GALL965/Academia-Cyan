@@ -1,5 +1,9 @@
 extends Control
 
+# --------- SEÑALES HACIA LoginFlow ---------
+signal go_to_result_read_pos
+signal go_to_result_read_neg
+
 const COLOR_SELECTED   = Color(1, 1, 1, 1)
 const COLOR_UNSELECTED = Color(1, 1, 1, 0.4)
 
@@ -11,8 +15,7 @@ onready var yes_button  = $CenterVBox/ReadOptionsHBox/yesVbox/yesButton
 onready var no_button   = $CenterVBox/ReadOptionsHBox/noVbox/noButton
 
 onready var continue_button   = $ContinueButton
-onready var false_continue_bg = $buttonFalseContinue
-
+# ELIMINADO: false_continue_bg
 
 # --------- ESTADO ---------
 var selected_target := ""          # "classroom" o "home"
@@ -32,7 +35,7 @@ func _ready() -> void:
 	# Botón continuar
 	continue_button.connect("pressed", self, "_on_continue_pressed")
 
-	# Estado inicial de colores y botón
+	# Estado inicial
 	_update_target_visuals()
 	_update_read_visuals()
 	_update_continue_state()
@@ -64,7 +67,6 @@ func _update_target_visuals() -> void:
 		class_button_classroom.modulate = COLOR_UNSELECTED
 		class_button_home.modulate      = COLOR_SELECTED
 	else:
-		# Ninguno seleccionado
 		class_button_classroom.modulate = COLOR_UNSELECTED
 		class_button_home.modulate      = COLOR_UNSELECTED
 
@@ -110,23 +112,16 @@ func _update_read_visuals() -> void:
 #   BOTÓN CONTINUAR
 # =========================
 func _update_continue_state() -> void:
-	# Solo habilitar si ya eligió destino y Sí/No
 	var enabled := (selected_target != "" and read_answer_selected)
-
 	continue_button.disabled = not enabled
 
 
-
-
-
 func _on_continue_pressed() -> void:
-	# Defensa extra por si acaso
 	if selected_target == "" or not read_answer_selected:
 		print("Faltan respuestas en OnboardingWho")
 		return
 
-	# decidir a qué escena ir según pueda leer
 	if can_read_write:
-		get_tree().change_scene("res://Scenes/UI/ResultReadpositive.tscn")
+		emit_signal("go_to_result_read_pos")
 	else:
-		get_tree().change_scene("res://Scenes/UI/ResultReadnegative.tscn")
+		emit_signal("go_to_result_read_neg")

@@ -1,0 +1,25 @@
+{
+  "conversation": [
+    {
+      "text": "¡Maravilloso! Esto es solo el inicio, con el tiempo y practica vas a poder mejorar tus habilidades.",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea1.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Ahora que completaste una tarea, puedes ver tus estadisticas en tu perfil, tomate tu tiempo y cuando estes listo ven a verme de nuevo.",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea3.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Vale vale",
+      "expression": "res://Assets/Visual/chars/Adan/ref.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Entonces la veo despues!",
+      "expression": "res://Assets/Visual/chars/Adan/idle.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    }
+  ]
+}
+

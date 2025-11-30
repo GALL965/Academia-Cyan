@@ -1,0 +1,78 @@
+{
+  "conversation": [
+      {
+      "text": "Bienvenido a nuestro salon principal!",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea1.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },	
+      {
+      "text": "Aqui vas a poder aprender a tu ritmo sobre las ciencias del mundo y la magia",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea3.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },	
+    	{
+      "text": "Oh! se ve genial... y huele a chicle de frutas",
+      "expression": "res://Assets/Visual/chars/Adan/idle.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },	
+    
+          {
+      "text": "Dejame mostrarte un poco de nuestro plan de aprendizaje",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea2.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },	
+
+  
+    {
+      "text": "Este boton es para acceder a las sesiones de Matematicas",
+      "expression": "res://Assets/Visual/chars/Aurea/math.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+        
+    	{
+      "text": "Este para las de español",
+      "expression": "res://Assets/Visual/chars/Aurea/esp.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },	
+    
+        {
+      "text": "Este para las de grografia",
+      "expression": "res://Assets/Visual/chars/Aurea/geo.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },	
+    
+            {
+      "text": "Este para las de ciencias naturales",
+      "expression": "res://Assets/Visual/chars/Aurea/nats.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },	
+    
+               {
+      "text": "Y este para las de historia",
+      "expression": "res://Assets/Visual/chars/Aurea/hist.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },	
+    
+        
+               {
+      "text": "Con este, podras acceder a tu recamara, ahi tendras tus estadisticas y si tienes, accesorios para personalizacion",
+      "expression": "res://Assets/Visual/chars/Aurea/rop.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },	
+
+	{
+      "text": "Perfectisimo, lo tengo!",
+      "expression": "res://Assets/Visual/chars/Adan/idle.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    
+    
+                   {
+      "text": "Cuando estes listo te espero en el salon de matematicas, necesito tu ayuda con algo, nos vemos!",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea3.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },	
+    
+  ]
+}
+

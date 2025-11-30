@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/rafflesia channel.mp3-7464f9021caa4ccef4a6e1879e400423.mp3str"
+
+[deps]
+
+source_file="res://Assets/ost/rafflesia channel.mp3"
+dest_files=[ "res://.import/rafflesia channel.mp3-7464f9021caa4ccef4a6e1879e400423.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

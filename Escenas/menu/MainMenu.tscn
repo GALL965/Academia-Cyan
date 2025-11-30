@@ -1,7 +1,6 @@
 [gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Escenas/menu/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Visual/botones/large.png" type="Texture" id=2]
 [ext_resource path="res://assets/Sour_Gummy/static/SourGummy-Black.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/Visual/fondos/salon.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Visual/botones/math.png" type="Texture" id=5]
@@ -11,7 +10,7 @@
 [ext_resource path="res://Assets/Visual/botones/esp.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Visual/botones/camp.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Visual/botones/salir.png" type="Texture" id=11]
-[ext_resource path="res://Assets/ost/Rafflesia-Channel.mp3" type="AudioStream" id=12]
+[ext_resource path="res://Assets/ost/rafflesia channel.mp3" type="AudioStream" id=12]
 [ext_resource path="res://Assets/Visual/botones/menu.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Visual/botones/pers.png" type="Texture" id=14]
 
@@ -34,17 +33,13 @@ region_rect = Rect2( 0, 0, 500, 250 )
 size = 50
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxTexture" id=7]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 1536, 1024 )
+[sub_resource type="StyleBoxTexture" id=17]
 
-[sub_resource type="StyleBoxTexture" id=8]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 1536, 1024 )
+[sub_resource type="StyleBoxTexture" id=18]
 
-[sub_resource type="StyleBoxTexture" id=6]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 1536, 1024 )
+[sub_resource type="StyleBoxTexture" id=19]
+
+[sub_resource type="StyleBoxTexture" id=20]
 
 [sub_resource type="DynamicFont" id=16]
 size = 50
@@ -155,9 +150,10 @@ rect_scale = Vector2( 0.650921, 0.650921 )
 size_flags_horizontal = 3
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 14 )
-custom_styles/hover = SubResource( 7 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/focus = SubResource( 19 )
+custom_styles/normal = SubResource( 20 )
 text = "Jugar"
 icon = ExtResource( 5 )
 
@@ -219,5 +215,5 @@ autoplay = true
 [connection signal="pressed" from="Hist" to="." method="_on_Opciones_pressed"]
 [connection signal="pressed" from="Math" to="." method="_on_Math_pressed"]
 [connection signal="pressed" from="Salir" to="." method="_on_Salir_pressed"]
-[connection signal="pressed" from="Pers" to="." method="_on_Salir_pressed"]
+[connection signal="pressed" from="Pers" to="." method="_on_Pers_pressed"]
 [connection signal="pressed" from="Menu" to="." method="_on_Salir_pressed"]

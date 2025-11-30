@@ -1,17 +1,52 @@
 {
   "conversation": [
+      {
+      "text": "Llegas a la academia, un aire fresco y un ligero olor a dulce de moras te recibe",
+      "expression": "res://Assets/Visual/chars/nul.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },	
+	{
+      "text": "Humm... parece que he llegado algo temprano",
+      "expression": "res://Assets/Visual/chars/Adan/ref.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },	
+    	{
+      "text": "Aqui deberian poner un comedor como el de la UV",
+      "expression": "res://Assets/Visual/chars/Adan/ref.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },	
+    
+          {
+      "text": "Ves a una figura femenina llegar hacia ti, un brillo azul casi como el cielo en sus ojos te observa",
+      "expression": "res://Assets/Visual/chars/nul.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },	
+
+  
     {
       "text": "¡Oh! tú debes ser el nuevo alumno!",
       "expression": "res://Assets/Visual/chars/Aurea/aurea1.png",
       "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
     },
+        
+    	{
+      "text": "Parece que si estaban esperandome!",
+      "expression": "res://Assets/Visual/chars/Adan/idle.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },	
+        {
+      "text": "Por supuesto!",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea3.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    
     {
       "text": "Es un placer tenerte aqui, en la academia Cyan aprenderas no solo aprenderas a controlar magia",
       "expression": "res://Assets/Visual/chars/Aurea/aurea3.png",
       "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
     },
     {
-      "text": "Tambien conoceras los secretos del mundo y la cienca... a nuestro modo",
+      "text": "Tambien conoceras los secretos del mundo y la ciencia... a nuestro modo",
       "expression": "res://Assets/Visual/chars/Aurea/aurea2.png",
       "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
     },
@@ -19,7 +54,13 @@
       "text": "Ven! vamos a darte una pequeña introduccion",
       "expression": "res://Assets/Visual/chars/Aurea/aurea4.png",
       "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+        	{
+      "text": "Veamos!",
+      "expression": "res://Assets/Visual/chars/Adan/idle.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
     }
+    
   ]
 }
 

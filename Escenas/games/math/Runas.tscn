@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Escenas/games/math/Runas.gd" type="Script" id=1]
 [ext_resource path="res://Assets/ost/ésto es una carrera a contra reloj, por cierto.mp3" type="AudioStream" id=2]
@@ -12,6 +12,24 @@
 [ext_resource path="res://Assets/Visual/botones/runs2.png" type="Texture" id=10]
 [ext_resource path="res://Assets/fonts/nunito/Nunito-ExtraBold.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://Assets/Visual/botones/runs3.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Visual/1/Explosion_4.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Visual/1/Explosion_5.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Visual/1/Explosion_3.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Visual/1/Explosion_2.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Visual/1/Explosion_1.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [  ],
+"loop": false,
+"name": "New Anim",
+"speed": 5.0
+}, {
+"frames": [ null, ExtResource( 17 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ), null ],
+"loop": false,
+"name": "default",
+"speed": 30.0
+} ]
 
 [sub_resource type="DynamicFont" id=4]
 size = 40
@@ -73,6 +91,12 @@ margin_right = 1855.0
 margin_bottom = 941.0
 rect_scale = Vector2( 0.775256, 0.775256 )
 texture = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 218, 267 )
+rotation = -1.57079
+frames = SubResource( 11 )
+animation = "New Anim"
 
 [node name="TargetLabel" type="Label" parent="."]
 margin_left = -44.0
@@ -260,3 +284,5 @@ stream = ExtResource( 6 )
 pitch_scale = 0.48
 
 [node name="TweenUI" type="Tween" parent="."]
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

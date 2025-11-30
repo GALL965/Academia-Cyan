@@ -188,8 +188,5 @@ func _process(delta):
 func _on_volver_pressed():
 	LoadingScreen.goto_scene("res://Escenas/menu/MainMenu.tscn")
 
-
-
-
 func _on_1_pressed():
-	LoadingScreen.goto_scene("res://Escenas/games/math/Runas.tscn")
+	LoadingScreen.goto_scene("res://Escenas/games/math/RunasTutorialFlow.tscn")

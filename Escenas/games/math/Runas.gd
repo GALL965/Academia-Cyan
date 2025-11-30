@@ -9,6 +9,13 @@ const OBJETIVO_MAX := 20
 var tiempo_total := 60.0       # segundos de partida
 var tiempo_restante := 0.0
 
+# --- TRANSICIÓN POST-PARTIDA ---
+const RESULT_DELAY := 3.0  # segundos que se queda la pantalla de resultados
+const NEXT_SCENE_PATH := "res://Escenas/finruns.tscn" 
+# <-- CAMBIA ESTA RUTA a la escena de diálogos que quieras
+
+var partida_terminada := false
+
 # --- NODOS ---
 onready var target_label      := $TargetLabel
 onready var current_sum_label := $CurrentLabel
@@ -86,6 +93,12 @@ func iniciar_partida() -> void:
 
 	cast_button.disabled = false
 	info_label.text = ""
+	partida_terminada = false
+
+	# Rehabilitar los botones del grid
+	for i in range(grid.get_child_count()):
+		var btn = grid.get_child(i)
+		btn.disabled = false
 
 	_refrescar_tablero()
 	_actualizar_suma_actual()
@@ -198,8 +211,8 @@ func _actualizar_suma_actual() -> void:
 
 
 func _on_cast_button_pressed() -> void:
-	if round_timer.is_stopped():
-		return  # Tiempo terminado
+	if round_timer.is_stopped() or partida_terminada:
+		return  # Tiempo terminado o ya acabó la partida
 
 	var seleccionados := _obtener_indices_seleccionados()
 	var cantidad_sel := seleccionados.size()
@@ -213,6 +226,13 @@ func _on_cast_button_pressed() -> void:
 
 	if suma == objetivo:
 		hechizos_correctos += 1
+
+		var anim := $AnimatedSprite
+		anim.visible = true
+		anim.stop()
+		anim.frame = 0
+		anim.play("default")   # <-- usa la animación con frames
+
 		info_label.text = "¡Hechizo correcto!"
 		$nice.play()
 		$nice2.play()
@@ -230,11 +250,12 @@ func _on_cast_button_pressed() -> void:
 	_refrescar_tablero()
 
 
+
 func _process(delta: float) -> void:
 	_float_time += delta
 
 	# Actualizar tiempo con décimas de segundo
-	if not round_timer.is_stopped():
+	if not round_timer.is_stopped() and not partida_terminada:
 		tiempo_restante = round_timer.get_time_left()
 		_actualizar_tiempo_label()
 
@@ -256,13 +277,32 @@ func _actualizar_tiempo_label() -> void:
 
 
 func _on_round_timer_timeout() -> void:
+	# Se acabó la partida
+	partida_terminada = true
 	cast_button.disabled = true
+
+	# Deshabilitar botones del grid para que ya no se pueda interactuar
+	for i in range(grid.get_child_count()):
+		var btn = grid.get_child(i)
+		btn.disabled = true
 
 	if has_node("/root/AcademiaStats"):
 		var stats = get_node("/root/AcademiaStats")
 		stats.registrar_partida_runas(hechizos_totales, hechizos_correctos, hechizos_incorrectos)
 
-	info_label.text = "Fin. Hechizos: %d  Correctos: %d" % [hechizos_totales, hechizos_correctos]
+	info_label.text = "Fin. Hechizos: %d  Correctos: %d  Incorrectos: %d" % [
+		hechizos_totales, hechizos_correctos, hechizos_incorrectos
+	]
+
+	# Esperar unos segundos mostrando resultados y luego cambiar de escena
+	var timer := get_tree().create_timer(RESULT_DELAY)
+	timer.connect("timeout", self, "_on_resultado_timeout")
+
+
+func _on_resultado_timeout() -> void:
+	# Salto a la escena de diálogos post-partida
+	if NEXT_SCENE_PATH != "":
+		LoadingScreen.goto_scene(NEXT_SCENE_PATH)
 
 
 # --- SHAKE HELPERS ---
@@ -284,5 +324,8 @@ func _shake_success() -> void:
 
 
 func _shake_error() -> void:
-	_shake(14.0, 0.3
-	)
+	_shake(14.0, 0.3)
+
+
+func _on_AnimatedSprite_animation_finished():
+	$AnimatedSprite.play("New Anim")

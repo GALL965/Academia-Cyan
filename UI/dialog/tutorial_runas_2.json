@@ -1,0 +1,45 @@
+{
+  "conversation": [
+    {
+      "text": "¡Buen trabajo con la primera suma! Ya ves que las runas no muerden? solo ayudan a pensar.",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea3.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Humm...  Genial, ver la Meta y el Actual me ayudó un montón.",
+      "expression": "res://Assets/Visual/chars/Adan/humm.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Exacto. La Meta te dice a cuál número debes llegar, y el Actual te muestra cuánto llevas con las runas que escogiste.",
+      "expression": "res://Assets/Visual/chars/Aurea/ref.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Ahora iremos a un desafío un poquito más grande: tendrás que llegar, por ejemplo, a 12.",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea1.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Puedes usar dos o tres runas para lograr la Meta. Prueba combinaciones hasta que el Actual sea igual al objetivo.",
+      "expression": "res://Assets/Visual/chars/Aurea/idle.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Si te pasas, solo quita alguna runa y vuelve a intentar. Lo importante es que entiendas cómo se van sumando los números.",
+      "expression": "res://Assets/Visual/chars/Aurea/ref.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Está bien, esta vez Intentare hacerlo mejor.",
+      "expression": "res://Assets/Visual/chars/Adan/ref.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Cuando logres esta segunda Meta, tendremos una última plática y después irás al desafío real de runas.",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea2.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    }
+  ]
+}
+

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/customize.mp3-52691ff3cca18b2a7aea26f66fbf8ca5.mp3str"
+
+[deps]
+
+source_file="res://Assets/ost/customize.mp3"
+dest_files=[ "res://.import/customize.mp3-52691ff3cca18b2a7aea26f66fbf8ca5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,40 @@
+{
+  "conversation": [
+    {
+      "text": "¡Lo lograste! Dominas las runas básicas y sabes cómo llegar a la Meta usando tus sumas.",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea3.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Je, je... Vale, le voy agarrando la onda a esto.",
+      "expression": "res://Assets/Visual/chars/Adan/idle.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "En el juego completo tendrás más retos: diferentes metas, menos tiempo y combinaciones más creativas.",
+      "expression": "res://Assets/Visual/chars/Aurea/idle.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "No te preocupes, lo que acabas de practicar es justo la base, con eso tienes suficiente.",
+      "expression": "res://Assets/Visual/chars/Aurea/ref.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Estoy listo. ¡Quiero ver qué tan lejos puedo llegar con mis hechizos de suma!",
+      "expression": "res://Assets/Visual/chars/Adan/humm.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Perfecto, entonces abriré el desafío de Runas Matemágicas. Recuerda: equivocarse también es parte de aprender.",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea1.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Cuando termines una partida, podremos seguir practicando y descubrir hechizos nuevos. ¡Te veré allí!",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea2.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    }
+  ]
+}
+

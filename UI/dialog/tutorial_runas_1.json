@@ -1,0 +1,57 @@
+{
+  "conversation": [
+    {
+      "text": "Me imagino que tienes la edad suficiente para saber como sumar dos numeros ¿verdad?.",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea1.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+{
+      "text": "Claro, aunque no soy una calculadora, se como hacerlo.",
+      "expression": "res://Assets/Visual/chars/Adan/ref.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+          "text": "Perfecto, entonces.",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea2.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    
+    
+    {
+      "text": "En esta pantalla verás una meta, 8. Tu misión es escoger las runas que, al sumarse, den ese número.",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea3.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Cada botón tiene un número. Cuando lo toques, la runa se encenderá y se agregará a tu suma.",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea3.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Si te equivocas o te pasas de la Meta, vuelve a tocar la runa para quitarla. Puedes probar varias veces.",
+      "expression": "res://Assets/Visual/chars/Aurea/ref.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Al lado verás un letrero que dice Actual: y te muestra cuánto llevas sumado con tus runas.",
+      "expression": "res://Assets/Visual/chars/Aurea/idle.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Cuando creas que ya tienes la suma correcta, presiona el botón que dice \"Lanzar!\" para activar tu hechizo.",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea2.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "Primero probaremos con una suma pequeña. Busca runas que juntas sumen 8. ¡Veamos qué tan rápido lo logras!",
+      "expression": "res://Assets/Visual/chars/Aurea/aurea1.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    },
+    {
+      "text": "¡Suena divertido! Voy a intentar que mi hechizo salga a la primera.",
+      "expression": "res://Assets/Visual/chars/Adan/idle.png",
+      "voice": "res://Assets/ost/Rafflesia Channel.mpeg"
+    }
+  ]
+}
+

@@ -1,10 +1,9 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/fonts/MPLUSRounded/MPLUSRounded1c-Black.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/fonts/nunito/Nunito-BlackItalic.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Visual/iconos/classroom icon.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Visual/logo.png" type="Texture" id=4]
-[ext_resource path="res://Assets/background/background cyan.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Visual/botones/whitecircle.png" type="Texture" id=6]
 [ext_resource path="res://Assets/fonts/nunito/Nunito-Black.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Assets/Visual/botones/large.png" type="Texture" id=8]
@@ -71,12 +70,6 @@ region_rect = Rect2( 0, 0, 1000, 250 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 9 )
-
-[node name="background" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 5 )
-expand = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_left = 1.0
